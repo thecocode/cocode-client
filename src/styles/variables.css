@@ -1,0 +1,8 @@
+:root {
+  /* COLORS */
+  --discord-blue: #2129ef;
+
+  /* SPACING */
+  --navbar-x: clamp(20px, 5.46vw, 90px);
+  --navbar-y: clamp(15px, 2.3vw, 30px);
+}

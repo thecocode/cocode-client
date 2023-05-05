@@ -1,8 +1,8 @@
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import { useMediaQuery } from '../../hooks';
 import { ScreenTypes } from '../../types';
 import { List, X as Cross } from '@phosphor-icons/react';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 
 function Logo() {
@@ -62,6 +62,14 @@ const navlinks = [
 export function Header() {
   const { screenType } = useMediaQuery();
   const [isMobileNavbarVisible, setIsMobileNavbarVisible] = useState(false);
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    if (pathname) {
+      setIsMobileNavbarVisible(false);
+    }
+  }, [pathname]);
+
   return (
     <>
       <AnimatePresence>

@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['./src/**/*.{tsx,jsx}', './src/*.{tsx.jsx}'],
+  content: ['./src/**/*.{tsx,jsx}', './src/*.{tsx,jsx}'],
   theme: {
     fontSize: {
       base: 'clamp(16px, 1.563vw, 20px)',

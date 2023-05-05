@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 import { useEffect, useState } from 'react';
 import { useThrottle } from './useThrottle';
 import { ScreenTypes } from '../types';
@@ -29,11 +28,6 @@ function getScreenType() {
 export function useMediaQuery() {
   const [screenType, setScreenType] = useState<ScreenTypes>(() => getScreenType());
   const handleResizing = useThrottle(() => setScreenType(getScreenType), 500);
-  console;
-
-  useEffect(() => {
-    console.log(screenType);
-  }, [screenType]);
 
   useEffect(() => {
     window.addEventListener('resize', () => handleResizing());

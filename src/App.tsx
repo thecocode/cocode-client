@@ -1,5 +1,11 @@
-import { Navbar } from './components';
+import { Header } from './components';
+import { AllRoutes } from './routes';
 
 export default function App() {
-  return <Navbar />;
+  return (
+    <>
+      <Header />
+      <AllRoutes />
+    </>
+  );
 }

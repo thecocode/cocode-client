@@ -5,6 +5,15 @@ module.exports = {
     fontSize: {
       base: 'clamp(16px, 1.563vw, 20px)',
     },
+    screens : {
+      xl : '1400px',
+      ml : '900px',
+      tb : '480px'
+    },
+    fontFamily : {
+      'poppins' : ['Poppins'],
+      'lato' : ['Lato']
+    },
     extend: {
       backgroundColor: {
         primary: '#fff',

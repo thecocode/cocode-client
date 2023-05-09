@@ -43,7 +43,6 @@ export function Hero() {
           />
         </svg>
       </h1>
-
       <p className='font-lato w-[80%] ml:w-[40%] text-[1.1rem] text-center my-8 mx-auto'>
         Join a community of tech enthusiasts who share your passion for coding and find ways to make
         meaningful contributions
@@ -52,5 +51,3 @@ export function Hero() {
     </div>
   );
 }
-
-export default Hero;

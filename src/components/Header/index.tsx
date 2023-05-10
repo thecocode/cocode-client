@@ -1,4 +1,4 @@
-import { NavLink, useLocation } from 'react-router-dom';
+import { Link, NavLink, useLocation } from 'react-router-dom';
 import { useMediaQuery } from '../../hooks';
 import { ScreenTypes } from '../../types';
 import { List, X as Cross } from '@phosphor-icons/react';
@@ -7,7 +7,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 
 function Logo() {
   return (
-    <NavLink to='/'>
+    <Link to='/'>
       <svg
         className='min-w-[150px] w-[20%] mb-[-2px]'
         width='190'
@@ -47,7 +47,7 @@ function Logo() {
           fill='black'
         />
       </svg>
-    </NavLink>
+    </Link>
   );
 }
 
@@ -63,6 +63,7 @@ export function Header() {
   const { screenType } = useMediaQuery();
   const [isMobileNavbarVisible, setIsMobileNavbarVisible] = useState(false);
   const { pathname } = useLocation();
+  const onSmallScreen = screenType === ScreenTypes.MOBILE || screenType === ScreenTypes.TABLET;
 
   useEffect(() => {
     if (pathname) {
@@ -73,17 +74,18 @@ export function Header() {
   return (
     <>
       <AnimatePresence>
-        {isMobileNavbarVisible && (
+        {isMobileNavbarVisible && onSmallScreen && (
           <motion.div
             key='mobile-nav'
             initial={{ y: '-100%' }}
             animate={{ y: 0, transformOrigin: 'top' }}
             exit={{ y: '-100%', transformOrigin: 'bottom' }}
             transition={{ type: 'just' }}
-            className='absolute inset-0 bg-[#F7EDFF] flex flex-col'
+            className='fixed inset-0 bg-[#F7EDFF] flex flex-col z-50'
           >
             <button
-              className='mt-navbar-y mr-navbar-x self-end'
+              type='button'
+              className='mt-navbar-y-sm mr-navbar-x-sm self-end'
               onClick={() => setIsMobileNavbarVisible(false)}
             >
               <Cross size={24} />
@@ -102,10 +104,15 @@ export function Header() {
           </motion.div>
         )}
       </AnimatePresence>
-      <header className='px-navbar-x py-navbar-y flex justify-between items-center'>
+      <header
+        className={`flex justify-between items-center z-50 ${
+          onSmallScreen ? 'px-navbar-x-sm py-navbar-y-sm' : 'px-navbar-x py-navbar-y'
+        }`}
+      >
         <Logo />
-        {screenType === ScreenTypes.MOBILE || screenType === ScreenTypes.TABLET ? (
+        {onSmallScreen ? (
           <button
+            type='button'
             onClick={() => {
               setIsMobileNavbarVisible(true);
             }}
@@ -119,7 +126,7 @@ export function Header() {
                 <li key={label}>
                   <NavLink
                     to={to}
-                    className='px-[clamp(8px,1.25vw,16px)] py-[clamp(6px,0.85vw,12px)] text-navlink'
+                    className='px-[clamp(8px,1.25vw,16px)] py-[clamp(6px,0.85vw,12px)] text-sm'
                   >
                     {label}
                   </NavLink>

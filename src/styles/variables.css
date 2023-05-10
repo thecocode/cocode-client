@@ -1,8 +1,19 @@
 :root {
   /* COLORS */
   --discord-blue: #2129ef;
+  --error-red: #e61313;
+  --disabled-gray: #999999;
+  --disabled-input: #dfdfdf;
+  --input-bg: #f2f2f2;
 
   /* SPACING */
-  --navbar-x: clamp(20px, 5.46vw, 90px);
-  --navbar-y: clamp(15px, 2.3vw, 30px);
+  --input-padding-x: clamp(14px, 1.45vw, 20px);
+  --input-padding-y: clamp(10px, 1.4vw, 17px);
+  --navbar-padding-x: clamp(20px, 5.46vw, 90px);
+  --navbar-padding-y: clamp(15px, 2.3vw, 30px);
+  --navbar-padding-x-sm: max(20px, 3vw);
+  --navbar-padding-y-sm: max(10px, 1.8vw);
+
+  /* BORDER */
+  --input-border-radius: 6px;
 }

@@ -264,7 +264,10 @@ export default function DisplayProjectsAndEvents({ type }: DisplayProps) {
           </div>
         </div>
       </div>
-      <a className='flex items-center text-md px-4 py-2 rounded-full w-fit gap-2 justify-evenly mx-auto outline outline-2 ' href= {`/${type}`} >
+      <a
+        className='flex items-center text-md px-4 py-2 rounded-full w-fit gap-2 justify-evenly mx-auto outline outline-2 '
+        href={`/${type}`}
+      >
         <span>View More</span>
         <img src='./assets/arrow.svg' />
       </a>

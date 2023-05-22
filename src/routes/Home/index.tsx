@@ -1,4 +1,4 @@
-import { ExploreEvents, ExploreProjects, Hero , Intro } from '../../components';
+import { ExploreEvents, ExploreProjects, Hero, Intro } from '../../components';
 
 export function Home() {
   return (
@@ -17,9 +17,9 @@ export function Home() {
         <img className=' w-[60%] ml:w-[80%]' src='./assets/hero-svg-3.svg' alt='' />
       </div>
       <div className='absolute  w-[25vw] rounded-tl-[50vw] rounded-bl-[50vw] aspect-[1/2] top-[95vh] right-[0] -z-10 rounded bg-[#E5CBF9]'></div>
-      <Intro/>
-      <ExploreEvents/>
-      <ExploreProjects/>
+      <Intro />
+      <ExploreEvents />
+      <ExploreProjects />
     </div>
   );
 }

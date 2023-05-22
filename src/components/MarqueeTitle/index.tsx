@@ -1,12 +1,12 @@
 import React from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
-import './styles.css'
+import './styles.css';
 
 interface content {
-  content : string;
+  content: string;
 }
 
-export function MarqueeTitle({content}: content ) {
+export function MarqueeTitle({ content }: content) {
   return (
     <div className='marquee font-poppins'>
       <AnimatePresence>
@@ -23,7 +23,8 @@ export function MarqueeTitle({content}: content ) {
               {content} <div className='dot'></div>{' '}
             </span>
             <span>
-              {content}<div className='dot'></div>
+              {content}
+              <div className='dot'></div>
             </span>
           </div>
         </motion.span>

@@ -9,7 +9,7 @@ export function Button({ link, type }: IButton) {
           type === ButtonTypes.DISCORD ? 'bg-discord-blue text-white' : 'bg-white text-black'
         } `}
       >
-        <img className='w-[24px]' src="./assets/discord-logo.svg" alt="" />
+        <img className='w-[24px]' src='./assets/discord-logo.svg' alt='' />
         <div>Join Discord</div>
       </span>
     </a>

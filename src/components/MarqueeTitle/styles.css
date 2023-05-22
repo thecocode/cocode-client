@@ -1,0 +1,64 @@
+.marquee {
+    display: flex;
+    width: 100%;
+    height: fit-content;
+    padding: 0.75rem 0;
+    overflow: hidden;
+    user-select: none;
+    outline: 2px solid black;
+    word-spacing: 10px;
+    background: white;
+  }
+  
+  .second-marquee {
+    background: red;
+  }
+  
+  .marquee > span {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .marquee-text {
+    width: 100vw;
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .marquee-text > span {
+    text-align: center;
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-left: 1rem;
+    font-size: 3rem;
+    color: black;
+    position: relative;
+  }
+  
+  .dot {
+    width: 8px;
+    height: 8px;
+    aspect-ratio: 1/1;
+    outline: 2px solid black;
+    border-radius: 50%;
+    background-color: black;
+  }
+  
+  @media (max-width: 900px) {
+    .marquee-text > span {
+      width: 100%;
+    }
+  
+    .marquee-text > span:nth-child(even) {
+      background-color: yellow;
+      display: none;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .marquee-text > span {
+      font-size: 2rem;
+    }
+  }

@@ -1,8 +1,8 @@
-import { Hero } from '../../components';
+import { ExploreEvents, ExploreProjects, Hero , Intro } from '../../components';
 
 export function Home() {
   return (
-    <h1 className=''>
+    <div className='overflow-x-hidden'>
       <Hero />
       <div
         className={` absolute w-[70vw] ml:w-[50vw] top-[-25vw] left-[-25vw] aspect-square  -z-10 bg-[#FFEFC5] rounded-full`}
@@ -13,10 +13,13 @@ export function Home() {
       <div className='absolute top-[55vh] left-[15vw]'>
         <img src='./assets/hero-svg-2.svg' alt='' />
       </div>
-      <div className='absolute  top-[90vh]'>
+      <div className='absolute z-[-10] top-[90vh]'>
         <img className=' w-[60%] ml:w-[80%]' src='./assets/hero-svg-3.svg' alt='' />
       </div>
-      <div className='absolute w-[50vw] top-[110vh] right-[-25vw] aspect-square rounded-full bg-[#E5CBF9]'></div>
-    </h1>
+      <div className='absolute  w-[25vw] rounded-tl-[50vw] rounded-bl-[50vw] aspect-[1/2] top-[95vh] right-[0] -z-10 rounded bg-[#E5CBF9]'></div>
+      <Intro/>
+      <ExploreEvents/>
+      <ExploreProjects/>
+    </div>
   );
 }

@@ -91,7 +91,7 @@ export default function DisplayProjectsAndEvents({ type }: DisplayProps) {
   });
 
   return (
-    <div className='font-poppins text-sm mt-12'>
+    <div className='font-poppins text-sm mt-12 mb-32'>
       <div className='flex flex-1'>
         <div className='flex-cont'>
           <div className='flex-child'>
@@ -265,7 +265,7 @@ export default function DisplayProjectsAndEvents({ type }: DisplayProps) {
         </div>
       </div>
       <a
-        className='flex items-center text-md px-4 py-2 rounded-full w-fit gap-2 justify-evenly mx-auto outline outline-2 '
+        className='flex items-center text-md px-6 py-4 rounded-full w-fit gap-2 justify-evenly mx-auto outline outline-2 '
         href={`/${type}`}
       >
         <span>View More</span>

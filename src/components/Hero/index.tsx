@@ -14,7 +14,7 @@ export function Hero() {
           viewBox='0 0 639 336'
           fill='none'
           xmlns='http://www.w3.org/2000/svg'
-          className={`${screenType !== ScreenTypes.MOBILE ? 'w-[50%]' : 'w-[90%]'}`}
+          className='w-[90%] ml:w-[50%]'
         >
           <rect x='1' y='63' width='210' height='63' rx='31.5' fill='#F6EBFF' />
           <path

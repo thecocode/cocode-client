@@ -1,5 +1,48 @@
+/* eslint-disable react/button-has-type */
 import { DiscordLogo } from '@phosphor-icons/react';
 import { ButtonTypes, Button as IButton } from '../../types';
+import { ButtonHTMLAttributes } from 'react';
+
+enum ButtonVariants {
+  PRIMARY = 'primary',
+}
+interface IBaseButton extends ButtonHTMLAttributes<HTMLButtonElement> {
+  LeftIcon?: () => JSX.Element;
+  RightIcon?: () => JSX.Element;
+  title?: string;
+  variant?: ButtonVariants;
+  extendedClassNames?: string;
+}
+
+const buttonStyles = {
+  primary: 'rounded-full border border-solid border-current font-medium',
+};
+
+export function BaseButton({
+  title,
+  type,
+  LeftIcon,
+  RightIcon,
+  extendedClassNames,
+  variant = ButtonVariants.PRIMARY,
+}: IBaseButton) {
+  function getVariantStyles() {
+    return buttonStyles[variant];
+  }
+
+  return (
+    <button
+      type={type || 'button'}
+      className={`px-[clamp(20px,2.9vw,40px)] py-[clamp(12px,1.25vw,24px)] flex items-center justify-center gap-4 ${getVariantStyles()} ${
+        extendedClassNames ? extendedClassNames : null
+      }`}
+    >
+      {LeftIcon ? <LeftIcon /> : null}
+      {title}
+      {RightIcon ? <RightIcon /> : null}
+    </button>
+  );
+}
 
 export function Button({ link, type }: IButton) {
   return (

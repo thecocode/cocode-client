@@ -14,22 +14,27 @@ export function Buttons () {
         {
             icon: LeftArrow1,
             textColor: '#2129EF' ,
-            name: 'Join Discord'
+            name: 'Join Discord',
+            link: 'https://twitter.com/thecocode'
         },
         {
             icon: LeftArrow2,
             textColor: '#05669C' ,
-            name: 'Join Twitter'
+            name: 'Join Twitter',
+            link: 'https://twitter.com/thecocode'
+
         },
         {
             icon: LeftArrow3,
             textColor: '#886A3D' ,
-            name: 'Join GitHub'
+            name: 'Join GitHub',
+            link: 'https://twitter.com/thecocode'
         },
         {
             icon: LeftArrow4,
             textColor: '#000' ,
-            name: 'Join Insta'
+            name: 'Join Insta',
+            link: 'https://twitter.com/thecocode'
         },
     ]
     return(
@@ -46,7 +51,9 @@ export function Buttons () {
                 ${
                   screenType === ScreenTypes.TABLET ? 'text-[13px] w-[135px]  gap-1 h-[52px]' : null
                 }`}
+                
                 />
+
                 <BaseButton
                   title= "Join Discrd"
             

@@ -17,10 +17,10 @@ export function OurTeam ()  {
        <img className={`w-[100%] h-[75%] cover`} src="./assets/pic.png" />
        <div>
         <div className={`flex justify-between mt-3`}>
-          <p className={`text-[1.75rem] font-Poppins normal font-medium leading-normal `}>Person Name</p>
+          <p className={`text-[1.75rem] font-Poppins normal font-medium leading-normal `}>Pooja</p>
           <img src="./assets/Vector-6.svg"/>
         </div>
-        <div className={`font-Poppins text-[16px] normal text-[#666] leading-normal font-extralight`}>Web Developer</div>
+        <div className={`font-Poppins text-[16px] normal text-[#666] leading-normal font-extralight`}>Founder</div>
        </div>
     </div>
 
@@ -33,10 +33,10 @@ export function OurTeam ()  {
      <img className={`w-[100%] h-[75%] `} src="./assets/pic.png" />
      <div>
         <div className={`flex justify-between mt-3`}>
-          <p className={`text-[1.75rem] font-Poppins normal font-medium leading-normal `}>Person Name</p>
+          <p className={`text-[1.75rem] font-Poppins normal font-medium leading-normal `}>Prajwal</p>
           <img src="./assets/Vector-6.svg"/>
         </div>
-        <div className={`font-Poppins text-[16px] normal text-[#666] leading-normal font-extralight`}>Web Developer</div>
+        <div className={`font-Poppins text-[16px] normal text-[#666] leading-normal font-extralight`}>Product Designer</div>
        </div>
    </div>
 
@@ -49,10 +49,10 @@ export function OurTeam ()  {
      <img className={`w-[100%] h-[75%] cover`} src="./assets/pic.png" />
      <div>
         <div className={`flex justify-between mt-3`}>
-          <p className={`text-[1.75rem] font-Poppins normal font-medium leading-normal `}>Person Name</p>
+          <p className={`text-[1.75rem] font-Poppins normal font-medium leading-normal `}>Harry</p>
           <img src="./assets/Vector-6.svg"/>
         </div>
-        <div className={`font-Poppins text-[16px] normal text-[#666] leading-normal font-extralight`}>Web Developer</div>
+        <div className={`font-Poppins text-[16px] normal text-[#666] leading-normal font-extralight`}>Developer</div>
        </div>
    </div>
 
@@ -63,10 +63,10 @@ export function OurTeam ()  {
      <img className={`w-[100%] h-[75%]`} src="./assets/pic.png" />
      <div>
         <div className={`flex justify-between mt-3`}>
-          <p className={`text-[1.75rem] font-Poppins normal font-medium leading-normal `}>Person Name</p>
+          <p className={`text-[1.75rem] font-Poppins normal font-medium leading-normal `}>Om</p>
           <img src="./assets/Vector-6.svg"/>
         </div>
-        <div className={`font-Poppins text-[16px] normal text-[#666] leading-normal font-extralight`}>Web Developer</div>
+        <div className={`font-Poppins text-[16px] normal text-[#666] leading-normal font-extralight`}>Developer</div>
        </div>
    </div>
 
@@ -79,10 +79,10 @@ export function OurTeam ()  {
      <img className={`w-[100%] h-[75%] cover`} src="./assets/pic.png" />
      <div>
         <div className={`flex justify-between mt-3`}>
-          <p className={`text-[1.75rem] font-Poppins normal font-medium leading-normal `}>Person Name</p>
+          <p className={`text-[1.75rem] font-Poppins normal font-medium leading-normal `}>Priti</p>
           <img src="./assets/Vector-6.svg"/>
         </div>
-        <div className={`font-Poppins text-[16px] normal text-[#666] leading-normal font-extralight`}>Web Developer</div>
+        <div className={`font-Poppins text-[16px] normal text-[#666] leading-normal font-extralight`}>Developer</div>
        </div>
    </div>
    

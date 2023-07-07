@@ -12,6 +12,7 @@ module.exports = {
       ml: '900px',
       tb: '480px',
     },
+
     fontFamily: {
       poppins: ['Poppins'],
       lato: ['Lato'],
@@ -54,6 +55,12 @@ module.exports = {
         'input-x': 'var(--input-padding-x)',
         'input-y': 'var(--input-padding-y)',
       },
+      dropShadow: {
+        'xl': '0px 4px 4px 0px rgba(0, 0, 0, 0.25)',
+      } ,
+      borderColor: {
+        'blue-bor': '#3897B5'
+      }
     },
   },
   plugins: [],

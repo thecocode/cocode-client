@@ -41,7 +41,7 @@ export function Buttons () {
       <div className={`w-[50%] grid grid-cols-2 gap-0
       ${screenType !== ScreenTypes.TABLET ? "" : 'mx-auto w-[80%] gap-x-5 gap-y-5'}
       ${screenType !== ScreenTypes.MID_LAPTOP ? "" : 'w-[60%]'}
-      ${screenType !== ScreenTypes.LARGE_LAPTOP ? "" : 'w-[40%] g-x-5 g-y-3'}
+      ${screenType !== ScreenTypes.LARGE_LAPTOP ? "" : 'w-[43%] g-x-5 g-y-3'}
       `}>
    
        

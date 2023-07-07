@@ -4,3 +4,9 @@ export enum ScreenTypes {
   TABLET = 'tablet',
   MOBILE = 'mobile',
 }
+
+export type ListItem = {
+  name: string;
+    img: string;
+    stars?: number;
+}

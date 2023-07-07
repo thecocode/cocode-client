@@ -38,53 +38,44 @@ export function Buttons () {
         },
     ]
     return(
-      <div className={`w-[50%] flex flex-col gap-5
-      ${screenType === ScreenTypes.TABLET ? '' : ''}
+      <div className={`w-[50%] grid grid-cols-2 gap-0
+      ${screenType !== ScreenTypes.TABLET ? "" : 'mx-auto w-[80%] gap-x-5 gap-y-5'}
+      ${screenType !== ScreenTypes.MID_LAPTOP ? "" : 'w-[60%]'}
+      ${screenType !== ScreenTypes.LARGE_LAPTOP ? "" : 'w-[40%] g-x-5 g-y-3'}
       `}>
    
-          <div className='flex'>
+       
           <BaseButton
                   title= "Join Discrd"
             
                 LeftIcon={LeftArrow1}
-                extendedClassNames={`mt-[1.3vw] w-[243px] h-[60px] text-[#2129EF]  border-[1px] border-blue-bor 
-                ${
-                  screenType === ScreenTypes.TABLET ? 'text-[13px] w-[135px]  gap-1 h-[52px]' : null
-                }`}
+                extendedClassNames={`mt-[1.3vw] max-w-[16rem] gap-3 h-[3.4rem] border-blue-border text-[#2129EF]  border-[1px] border-[#3897B5]`}
+               
                 
                 />
 
                 <BaseButton
                   title= "Join Discrd"
             
-                LeftIcon={LeftArrow1}
-                extendedClassNames={`mt-[1.3vw] w-[243px] h-[60px] text-[#2129EF]  border-[1px] border-blue-bor 
-                ${
-                  screenType === ScreenTypes.TABLET ? 'text-[13px] w-[135px] mx-auto gap-1 h-[52px]' : null
-                }`}
+                LeftIcon={LeftArrow2}
+                extendedClassNames={`mt-[1.3vw] max-w-[16rem] gap-3 h-[3.4rem] border-blue-border text-[#05669C]  border-[1px]border-[#3897B5] `}
                 />
-          </div>
+         
   
-          <div className='flex'>
+       
           <BaseButton
                   title= "Join Discrd"
             
-                LeftIcon={LeftArrow1}
-                extendedClassNames={`mt-[1.3vw] w-[243px] h-[60px] text-[#2129EF]  border-[1px] border-blue-bor 
-                ${
-                  screenType === ScreenTypes.TABLET ? 'text-[13px] w-[135px] gap-1 h-[52px]' : null
-                }`}
+                LeftIcon={LeftArrow3}
+                extendedClassNames={`mt-[1.3vw] max-w-[16rem] gap-3 h-[3.4rem] border-blue-border text-[#886A3D]  border-[1px] border-[#3897B5]`}
                 />
                 <BaseButton
                   title= "Join Discrd"
             
-                LeftIcon={LeftArrow1}
-                extendedClassNames={`mt-[1.3vw] w-[243px] h-[60px] text-[#2129EF]  border-[1px] border-blue-bor 
-                ${
-                  screenType === ScreenTypes.TABLET ? 'text-[13px] w-[135px]  gap-1 h-[52px]' : null
-                }`}
+                LeftIcon={LeftArrow4}
+                extendedClassNames={`mt-[1.3vw] max-w-[16rem] gap-3 h-[3.4rem]  text-[#000]  border-[1px] border-[#3897B5]`}
                 />
-          </div>
+          
   
       </div>
     )

@@ -3,7 +3,7 @@ import { ButtonTypes, ScreenTypes } from '../../types';
 import { BaseButton } from '../../components/Button/index';
 import {Flower} from './Flower'
 import {OurTeam} from './OurTeam';
-import {Buttons} from './something'
+import {Buttons} from './Buttons'
 import { LeftArrow1, LeftArrow2, LeftArrow3, LeftArrow4 } from './Icons';
 
 export function AboutUs() {

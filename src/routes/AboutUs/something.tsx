@@ -53,7 +53,8 @@ export function Buttons () {
                 title= {social.name}
               key={key}
               LeftIcon={social.icon}
-              extendedClassNames={`mt-[1.3vw] max-w-[16rem] gap-2 h-[3.4rem] text-[${social.socialColor}]  border-[1px] border-blue-bor `}
+              className='border-blue-500'
+              extendedClassNames={`mt-[1.3vw] max-w-[16rem] gap-2 h-[3.4rem] border-blue-border text-[${social.socialColor}]  border-[1px] `}
        link="https://twitter.com/thecocode"
             >
     

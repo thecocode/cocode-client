@@ -1,0 +1,78 @@
+
+  .swiping-component {
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: space-evenly;
+    background-color: #ffefc5;
+  }
+  
+  .carousel {
+    display: flex;
+    position: relative;
+    width: fit-content;
+    transition: all 1s;
+  }
+  
+  .carousel-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50vw;
+    aspect-ratio: 1/1;
+    transition: all 1s;
+  }
+  
+  .navigation-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 8rem;
+  }
+  
+  .content {
+    width: 50%;
+    background-color: white;
+    aspect-ratio: 4/3;
+    transition: all 1s;
+    box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.1);
+    position: relative;
+  }
+  
+  .content > div {
+    outline: 2px solid black;
+  }
+
+  .onfocus .content {
+    background: white;
+    scale: 1.5;
+    box-shadow: 0px 0px 15px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .review-image {
+    width: 25%;
+    position: absolute;
+    border-radius: 50%;
+    outline: 5px solid white;
+    background-color: white;
+    top: -12%;
+    left: 12%;
+    transition: all 1s;
+  }
+  
+  
+  
+  @media (max-width: 500px) {
+    .content {
+      width: 75%;
+    }
+    .onfocus .content {
+      scale: 2;
+    }
+
+    .review-image {
+      width: 50%;
+      left: 25%;
+      top : -20%;
+    }
+  }
+  

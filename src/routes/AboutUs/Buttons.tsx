@@ -55,7 +55,7 @@ export function Buttons () {
                 />
 
                 <BaseButton
-                  title= "Join Discrd"
+                  title= "Join Twitter"
             
                 LeftIcon={LeftArrow2}
                 extendedClassNames={`mt-[1.3vw] max-w-[16rem] gap-3 h-[3.4rem] border-blue-border text-[#05669C]  border-[1px]border-[#3897B5] `}
@@ -64,13 +64,13 @@ export function Buttons () {
   
        
           <BaseButton
-                  title= "Join Discrd"
+                  title= "Join GitHub"
             
                 LeftIcon={LeftArrow3}
                 extendedClassNames={`mt-[1.3vw] max-w-[16rem] gap-3 h-[3.4rem] border-blue-border text-[#886A3D]  border-[1px] border-[#3897B5]`}
                 />
                 <BaseButton
-                  title= "Join Discrd"
+                  title= "Join Instagram"
             
                 LeftIcon={LeftArrow4}
                 extendedClassNames={`mt-[1.3vw] max-w-[16rem] gap-3 h-[3.4rem]  text-[#000]  border-[1px] border-[#3897B5]`}

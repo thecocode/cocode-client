@@ -27,8 +27,8 @@ export function OurTeam ()  {
 
    <div className={`max-w-[18.75rem] max-h-[25rem]   relative
         ${screenType !== ScreenTypes.TABLET ? "" : 'top-[0vh]'}
-        ${screenType !== ScreenTypes.LARGE_LAPTOP? "" : 'top-[5vh]'}
-        ${screenType !== ScreenTypes.MID_LAPTOP ? "" : 'top-[5vh]'}
+        ${screenType !== ScreenTypes.LARGE_LAPTOP? "" : 'top-[10vh]'}
+        ${screenType !== ScreenTypes.MID_LAPTOP ? "" : 'top-[10vh]'}
    `}>
      <img className={`w-[100%] h-[75%] `} src="./assets/prajwal.jpeg" />
      <div>
@@ -43,8 +43,8 @@ export function OurTeam ()  {
 
    <div className={`max-w-[18.75rem] max-h-[25rem] relative
     ${screenType !== ScreenTypes.TABLET ? "" : 'top-[0vh]'}
-    ${screenType !== ScreenTypes.LARGE_LAPTOP ? "" : 'top-[10vh]'}
-    ${screenType !== ScreenTypes.MID_LAPTOP ? "" : 'top-[10vh]'}
+    ${screenType !== ScreenTypes.LARGE_LAPTOP ? "" : 'top-[20vh]'}
+    ${screenType !== ScreenTypes.MID_LAPTOP ? "" : 'top-[20vh]'}
    `}>
      <img className={`w-[100%] h-[75%] cover`} src="./assets/Harry.jpeg" />
      <div>

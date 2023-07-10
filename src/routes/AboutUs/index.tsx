@@ -36,9 +36,12 @@ export function AboutUs() {
       <div className={`flex w-[90%] mx-auto mt-[5%] flex-col shrink
     
       `}>
-        <p className={`w-[50%] text-[1.1rem] shadow-text-shadow leading-[146%] font-500% text-[#000] text-shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)]
+        <p  className={`w-[50%] text-[1.1rem] shadow-text-shadow leading-[146%] font-500% text-[#000] text-shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)]
           ${screenType !== ScreenTypes.TABLET ? "" : 'w-[70%] text-center justify-center font-400 mx-auto text-[0.9rem] mt-2'}
-        `}>
+          
+        `
+      
+        }>
       CoCode is a budding learner-centric tech-based community that aims to nurture and support those building a career in tech.
         </p>
      </div>

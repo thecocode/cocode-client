@@ -1,11 +1,11 @@
-import { ExploreEvents, ExploreProjects, Hero, Intro } from '../../components';
+import { ExploreEvents, ExploreProjects, Hero, Intro, Testimonials } from '../../components';
 
 export function Home() {
   return (
     <div className='overflow-x-hidden'>
       <Hero />
       <div
-        className={` absolute w-[70vw] ml:w-[50vw] top-[-25vw] left-[-25vw] aspect-square  -z-10 bg-[#FFEFC5] rounded-full`}
+        className={` absolute w-[70vw] ml:w-[50vw] top-[-25vw] left-[-25vw] aspect-square  -z-10 rounded-full`}
       ></div>
       <div className='absolute top-[25vh] right-[25vw]'>
         <img src='./assets/hero-svg-1.svg' alt='' />
@@ -20,6 +20,7 @@ export function Home() {
       <Intro />
       <ExploreEvents />
       <ExploreProjects />
+      <Testimonials/>
     </div>
   );
 }

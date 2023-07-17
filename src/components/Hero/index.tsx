@@ -6,7 +6,7 @@ export function Hero() {
   const { screenType } = useMediaQuery();
   return (
     <div className='relative py-12'>
-      <h1 className='w-[90%] flex items-center justify-center mx-auto mt-16'>
+      <h1 className='w-[90%] flex items-center justify-center mx-auto mt-8'>
         <div className='absolute -z-10 mx-auto text-transparent'>CODE CONTRIBUTE COLLABORATE</div>
         <svg
           width='639'

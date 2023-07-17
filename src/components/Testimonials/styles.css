@@ -51,7 +51,7 @@
   outline: 5px solid white;
   background-color: white;
   top: -15%;
-  left: 30%;
+  left: 30px;
 }
 
 @media (max-width: 500px) {

@@ -94,16 +94,17 @@ export function Testimonials() {
             >
               <div 
                 className={`content 
+
                 ${index === onFocus - 1 && 'transform-left' } 
                 ${index === onFocus + 1 && 'transform-right' }
                 `}
                 
               >
                 <img className='review-image' src='./assets/testimonialimg.svg' />
-                <div className='w-3/4 m-auto flex flex-col justify-center text-[0.55rem] ml:text-sm '>
-                  <p className=''>{val.message}</p>
-                  <p className='mt-4 pb-2 font-bold'>{val.name}</p>
-                  <p className='text-xs pb-4 text-gray-400'>{val.position}</p>
+                <div className='w-3/4 m-auto flex flex-col justify-center  ml:text-sm '>
+                  <p className='text-xs'>{val.message}</p>
+                  <p className='mt-4 text-xs pb-2 font-bold'>{val.name}</p>
+                  <p className=' text-[0.55rem] pb-4 text-gray-400'>{val.position}</p>
                 </div>
               </div>
             </div>

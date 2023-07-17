@@ -4,35 +4,35 @@ import DisplayProjectsAndEvents from '../DisplayProjectsAndEvents';
 
 const PROJECTS = [
   {
-    name: "Apple",
+    name: 'Apple',
     img: "url('./assets/placeholder-1.png')",
-    stars: 121
+    stars: 121,
   },
   {
-    name: "Banana",
+    name: 'Banana',
     img: "url('./assets/placeholder-2.png')",
-    stars: 142
+    stars: 142,
   },
   {
-    name: "Orange",
+    name: 'Orange',
     img: "url('./assets/placeholder-3.png')",
-    stars: 223
+    stars: 223,
   },
   {
-    name: "Watermelon",
+    name: 'Watermelon',
     img: "url('./assets/placeholder-4.png')",
-    stars: 474
+    stars: 474,
   },
   {
-    name: "Strawberry",
+    name: 'Strawberry',
     img: "url('./assets/placeholder-5.png')",
-    stars: 105
+    stars: 105,
   },
   {
-    name: "Pomogranate",
+    name: 'Pomogranate',
     img: "url('./assets/placeholder-1.png')",
-    stars: 216
-  }
+    stars: 216,
+  },
 ];
 
 export function ExploreProjects() {

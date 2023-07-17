@@ -92,13 +92,12 @@ export function Testimonials() {
                 }
               }}
             >
-              <div 
+              <div
                 className={`content 
 
-                ${index === onFocus - 1 && 'transform-left' } 
-                ${index === onFocus + 1 && 'transform-right' }
+                ${index === onFocus - 1 && 'transform-left'} 
+                ${index === onFocus + 1 && 'transform-right'}
                 `}
-                
               >
                 <img className='review-image' src='./assets/testimonialimg.svg' />
                 <div className='w-3/4 m-auto flex flex-col justify-center  ml:text-sm '>

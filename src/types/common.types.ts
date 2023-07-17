@@ -7,6 +7,6 @@ export enum ScreenTypes {
 
 export type ListItem = {
   name: string;
-    img: string;
-    stars?: number;
-}
+  img: string;
+  stars?: number;
+};

@@ -1,7 +1,7 @@
-import { useState } from "react";
-import DisplayProjectsAndEvents from "../../components/DisplayProjectsAndEvents";
-import { Searchbar } from "../../components/Searchbar";
-import { ListItem } from "../../types";
+import { useState } from 'react';
+import DisplayProjectsAndEvents from '../../components/DisplayProjectsAndEvents';
+import { Searchbar } from '../../components/Searchbar';
+import { ListItem } from '../../types';
 
 const EVENTS = [
   {
@@ -31,10 +31,11 @@ const EVENTS = [
 ];
 
 export function Events() {
-  const [filteredList , setFilteredList] = useState<ListItem[]>(EVENTS)
-  return <div className="flex flex-col gap-8">
-    <Searchbar type = 'events' setFilteredList = {setFilteredList} list = {EVENTS}/>
-    <DisplayProjectsAndEvents type="events" filteredList={filteredList}/>
-
-  </div>;
+  const [filteredList, setFilteredList] = useState<ListItem[]>(EVENTS);
+  return (
+    <div className='flex flex-col gap-8'>
+      <Searchbar type='events' setFilteredList={setFilteredList} list={EVENTS} />
+      <DisplayProjectsAndEvents type='events' filteredList={filteredList} />
+    </div>
+  );
 }

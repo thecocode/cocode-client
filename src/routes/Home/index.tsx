@@ -20,7 +20,7 @@ export function Home() {
       <Intro />
       <ExploreEvents />
       <ExploreProjects />
-      <Testimonials/>
+      <Testimonials />
     </div>
   );
 }

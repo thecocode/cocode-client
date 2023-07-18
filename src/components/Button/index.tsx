@@ -38,9 +38,8 @@ export function BaseButton({
       className={`px-[clamp(20px,2.9vw,40px)] py-[clamp(12px,1.25vw,24px)] flex items-center justify-center gap-4 ${getVariantStyles()} ${
         extendedClassNames ? extendedClassNames : null
       }`}
-
     >
-    { link ? <a href={link}  /> : null}
+      {link ? <a href={link} /> : null}
       {LeftIcon ? <LeftIcon /> : null}
       {title}
       {RightIcon ? <RightIcon /> : null}

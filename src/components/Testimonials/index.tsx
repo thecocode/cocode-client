@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import './styles.css';
 
 export function Testimonials() {
   const [position, setPosition] = useState(25);
@@ -59,7 +58,7 @@ export function Testimonials() {
         src='./assets/testimonial-star.svg'
       />
       <div
-        className='swiping-component'
+        className='swiping-component flex h-[100vh] flex-col justify-evenly bg-[#ffefc5]'
         onTouchStart={(e) => {
           setStartPosition(e.changedTouches[0].clientX);
         }}
@@ -75,11 +74,14 @@ export function Testimonials() {
           }
         }}
       >
-        <div className='carousel' style={{ left: `${position}%` }}>
+        <div
+          className='carousel flex relative w-fit transition-all duration-1000'
+          style={{ left: `${position}%` }}
+        >
           {DISPLAYLIST.map((val, index) => (
             <div
               key={index}
-              className={`carousel-item ${onFocus === index ? 'onfocus' : 'cursor-pointer'} `}
+              className={`carousel-item  flex items-center justify-center w-[50vw] aspect-square transition-all duration-1000 cursor-pointer`}
               onClick={() => {
                 if (index === onFocus - 1) {
                   setPosition((prev) => prev + 50);
@@ -95,12 +97,17 @@ export function Testimonials() {
               <div
                 className={`content 
 
-                ${index === onFocus - 1 && 'transform-left'} 
-                ${index === onFocus + 1 && 'transform-right'}
+                ${index === onFocus - 1 && 'translate-x-[-25%]'} 
+                ${index === onFocus + 1 && 'translate-x-[25%]'}
+                ${onFocus === index ? 'onfocus scale-[1.5]' : 'cursor-pointer'}
+                w-[75%] tb:w-[50%] bg-white py-[4rem] shadow-md relative text-center pt-[2rem] pb-[1rem] transition-all duration-1000 aspect-[4/3] flex justify-center rounded-md
                 `}
               >
-                <img className='review-image' src='./assets/testimonialimg.svg' />
-                <div className='w-3/4 m-auto flex flex-col justify-center  ml:text-sm '>
+                <img
+                  className='review-image w-[40%] left-[30%] top-[-30px] p-0 transition-all duration-1000 tb:left-[35px] tb:w-[80px] tb:top-[-40px] absolute rounded-full outline outline-[5px] outline-white bg-white'
+                  src='./assets/testimonialimg.svg'
+                />
+                <div className='w-3/4 m-auto flex flex-col justify-center pt-[1.5rem]  ml:text-sm '>
                   <p className='text-xs'>{val.message}</p>
                   <p className='mt-4 text-xs pb-2 font-bold'>{val.name}</p>
                   <p className=' text-[0.55rem] pb-4 text-gray-400'>{val.position}</p>

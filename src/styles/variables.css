@@ -6,6 +6,9 @@
   --disabled-input: #dfdfdf;
   --input-bg: #f2f2f2;
 
+  /* text shadow about us */
+  --tw-shadow-color: rgba(0, 0, 0, 0.25);
+
   /* SPACING */
   --input-padding-x: clamp(14px, 1.45vw, 20px);
   --input-padding-y: clamp(10px, 1.4vw, 17px);

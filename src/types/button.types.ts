@@ -1,6 +1,5 @@
 export enum ButtonTypes {
   DISCORD = 'discord',
-
 }
 
 export interface Button {

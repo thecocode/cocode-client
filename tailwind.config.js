@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+
 module.exports = {
   content: ['./src/**/*.{tsx,jsx}', './src/*.{tsx,jsx}'],
   theme: {
@@ -6,6 +7,7 @@ module.exports = {
       xs: 'clamp(12px, 1vw, 16px)',
       sm: 'clamp(14px, 1.25vw, 18px)',
       md: 'clamp(16px, 1.56vw, 20px)',
+      lg: 'clamp(18px, 1.82vw, 28px)'
     },
     screens: {
       xl: '1400px',
@@ -36,6 +38,7 @@ module.exports = {
         error: 'var(--error-red)',
         'disabled-gray': 'var(--disabled-gray)',
         'disabled-input': 'var(--disabled-input)',
+        'border-blue': '#3897B5'
       },
       margin: {
         'navbar-x': 'var(--navbar-padding-x)',
@@ -51,6 +54,10 @@ module.exports = {
         'navbar-x-sm': 'var(--navbar-padding-x-sm)',
         'navbar-y-sm': 'var(--navbar-padding-y-sm)',
       },
+      textShadow: { 
+        'default': '0 0 0 0',
+        'lg': '0 4px 4px var(--tw-shadow-color)',
+      },
       spacing: {
         'input-x': 'var(--input-padding-x)',
         'input-y': 'var(--input-padding-y)',
@@ -58,10 +65,17 @@ module.exports = {
       dropShadow: {
         'xl': '0px 4px 4px 0px rgba(0, 0, 0, 0.25)',
       } ,
-      borderColor: {
-        'blue-border': '#3897B5'
-      }
+   
     },
   },
-  plugins: [],
+  plugins: [
+    require('tailwindcss-typography')({
+  
+      ellipsis: true,         
+      hyphens: true,         
+      kerning: true,          
+      textUnset: true,       
+      componentPrefix: 'c-',  
+    }),
+  ],
 };

@@ -2,12 +2,12 @@
 import { DiscordLogo } from '@phosphor-icons/react';
 import { ButtonTypes, Button as IButton } from '../../types';
 import { ButtonHTMLAttributes } from 'react';
-
+import { Link } from 'react-router-dom';
 enum ButtonVariants {
   PRIMARY = 'primary',
 }
 interface IBaseButton extends ButtonHTMLAttributes<HTMLButtonElement> {
-  LeftIcon?: () => JSX.Element;
+  LeftIcon?: () => JSX.Element ;
   RightIcon?: () => JSX.Element;
   title?: string;
   variant?: ButtonVariants;
@@ -33,18 +33,20 @@ export function BaseButton({
   }
 
   return (
+    
+   
     <button
       type={type || 'button'}
       className={`px-[clamp(20px,2.9vw,40px)] py-[clamp(12px,1.25vw,24px)] flex items-center justify-center gap-4 ${getVariantStyles()} ${
         extendedClassNames ? extendedClassNames : null
       }`}
-
     >
-    { link ? <a href={link}  /> : null}
-      {LeftIcon ? <LeftIcon /> : null}
+   
+      {LeftIcon ? <LeftIcon />  : null}
       {title}
       {RightIcon ? <RightIcon /> : null}
     </button>
+ 
   );
 }
 
@@ -59,6 +61,6 @@ export function Button({ link, type }: IButton) {
         <DiscordLogo />
         <div>Join Discord</div>
       </span>
-    </a>
+</a>
   );
 }

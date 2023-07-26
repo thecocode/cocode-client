@@ -11,7 +11,6 @@ export function Searchbar({ type, setFilteredList, list }: SearchProp) {
   const [displayFilters, setDisplayFilters] = useState(false);
   const [selectedFilter, setSelectedFilters] = useState('name');
 
-  const filterRef = useRef<HTMLUListElement>(null);
   const filterBtnRef = useRef<HTMLDivElement>(null);
 
   function handleClickOutside(e: any) {
@@ -58,13 +57,13 @@ export function Searchbar({ type, setFilteredList, list }: SearchProp) {
           <ul
             className={` ${
               displayFilters ? 'block' : ' hidden'
-            } absolute top-[calc(100%+4px)] w-full bg-input-bg rounded-md overflow-y-auto max-h-[180px] `}
+            } absolute top-[calc(100%+4px)] w-full min-w-[100px] right-[-25%] ml:right-0 bg-[#f2f2f2] rounded-md overflow-y-auto max-h-[180px] `}
           >
             <li
               className='text-sm cursor-pointer'
               onClick={() => {
                 setSelectedFilters('name');
-                setFilteredList((prev) => {
+                setFilteredList(() => {
                   const newL = [...list].sort((a, b) => (a.name > b.name ? 1 : -1));
                   // debugger;
                   return newL;
@@ -80,7 +79,7 @@ export function Searchbar({ type, setFilteredList, list }: SearchProp) {
                 className='text-sm cursor-pointer'
                 onClick={() => {
                   setSelectedFilters('stars');
-                  setFilteredList((prev) => {
+                  setFilteredList(() => {
                     const newL = [...list].sort((a, b) => {
                       const starsA = a.stars !== undefined ? a.stars : Number.NEGATIVE_INFINITY;
                       const starsB = b.stars !== undefined ? b.stars : Number.NEGATIVE_INFINITY;

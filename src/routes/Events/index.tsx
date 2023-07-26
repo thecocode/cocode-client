@@ -35,7 +35,7 @@ export function Events() {
   return (
     <div className='flex flex-col gap-8'>
       <Searchbar type='events' setFilteredList={setFilteredList} list={EVENTS} />
-      <DisplayProjectsAndEvents type='events' filteredList={filteredList} />
+      <DisplayProjectsAndEvents type='events' atMainPage={true} filteredList={filteredList} />
     </div>
   );
 }

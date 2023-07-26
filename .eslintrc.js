@@ -35,6 +35,7 @@ module.exports = {
     'prefer-const': 'error',
     'prefer-arrow-callback': 'warn',
     'react/no-array-index-key': 'warn',
+    'react/button-has-type': 'warn',
   },
   settings: {
     'import/resolver': {

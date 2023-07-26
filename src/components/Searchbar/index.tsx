@@ -12,17 +12,11 @@ export function Searchbar({ type, setFilteredList, list }: SearchProp) {
   const [selectedFilter, setSelectedFilters] = useState('name');
 
   const filterRef = useRef<HTMLUListElement>(null);
-  const filterBtnRef = useRef<HTMLButtonElement>(null);
+  const filterBtnRef = useRef<HTMLDivElement>(null);
 
   function handleClickOutside(e: any) {
-    if (
-      filterRef.current &&
-      !filterRef.current.contains(e.target) &&
-      !filterBtnRef.current?.contains(e.target)
-    ) {
+    if (!filterBtnRef.current?.contains(e.target)) {
       setDisplayFilters(false);
-    } else {
-      setDisplayFilters(true);
     }
   }
 
@@ -36,8 +30,8 @@ export function Searchbar({ type, setFilteredList, list }: SearchProp) {
         <div className=' w-[80%] flex justify-center'>
           <input
             onChange={(e) => {
-              setFilteredList((prev) => {
-                const newL = prev.filter((el) =>
+              setFilteredList(() => {
+                const newL = list.filter((el) =>
                   el.name.toLowerCase().includes(e.target.value.toLowerCase()),
                 );
 
@@ -52,54 +46,42 @@ export function Searchbar({ type, setFilteredList, list }: SearchProp) {
             <img className='p-4' src='./assets/searchIcon.svg' />
           </button>
         </div>
-        <div className='w-[20%] flex flex-col align-middle relative p-4 border-l-2  '>
-          <button
-            ref={filterBtnRef}
-            onClick={() => setDisplayFilters((prev) => !prev)}
-            className=' w-full h-full flex justify-center gap-6 items-center'
-          >
+        <div
+          ref={filterBtnRef}
+          onClick={() => setDisplayFilters((prev) => !prev)}
+          className='w-[20%] flex flex-col align-middle relative py-4 border-l-2  '
+        >
+          <button className=' w-full h-full flex justify-center gap-6 items-center'>
             <img src='./assets/filter.svg' />
             <div className='ml:block hidden'>Filters</div>
           </button>
           <ul
             className={` ${
               displayFilters ? 'block' : ' hidden'
-            } absolute top-[100%] right-[-25%] tb:right-0 w-full min-w-[100px] flex flex-col align-top text-left`}
-            ref={filterRef}
+            } absolute top-[calc(100%+4px)] w-full bg-input-bg rounded-md overflow-y-auto max-h-[180px] `}
           >
             <li
-              className={` py-2 ${
-                selectedFilter === 'name' ? 'bg-blue-200' : 'bg-blue-100'
-              } text-sm`}
+              className='text-sm cursor-pointer'
               onClick={() => {
                 setSelectedFilters('name');
                 setFilteredList((prev) => {
-                  const newL = [...prev].sort((a, b) => (a.name > b.name ? 1 : -1));
+                  const newL = [...list].sort((a, b) => (a.name > b.name ? 1 : -1));
                   // debugger;
                   return newL;
                 });
               }}
             >
-              <label className='relative flex justify-center gap-4 text-left'>
-                <input
-                  type='radio'
-                  value='name'
-                  name='filter'
-                  className='w-full hidden h-full z-10 absolute'
-                  placeholder='By name'
-                />
-                By names
-              </label>
+              <button className=' w-full pl-4 py-2 text-start transition-colors hover:bg-[#EAEAEA]'>
+                By Names
+              </button>
             </li>
             {type === 'projects' && (
               <li
-                className={` py-2 ${
-                  selectedFilter !== 'name' ? 'bg-blue-200' : 'bg-blue-100'
-                } text-sm`}
+                className='text-sm cursor-pointer'
                 onClick={() => {
                   setSelectedFilters('stars');
                   setFilteredList((prev) => {
-                    const newL = [...prev].sort((a, b) => {
+                    const newL = [...list].sort((a, b) => {
                       const starsA = a.stars !== undefined ? a.stars : Number.NEGATIVE_INFINITY;
                       const starsB = b.stars !== undefined ? b.stars : Number.NEGATIVE_INFINITY;
                       return starsB - starsA;
@@ -108,16 +90,9 @@ export function Searchbar({ type, setFilteredList, list }: SearchProp) {
                   });
                 }}
               >
-                <label className='relative flex justify-center gap-4 text-left'>
-                  <input
-                    type='radio'
-                    name='filter'
-                    value='stars'
-                    className='w-full hidden h-full z-10 absolute'
-                    placeholder='By name'
-                  />
-                  By stars
-                </label>
+                <button className=' w-full pl-4 py-2 text-start transition-colors hover:bg-[#EAEAEA]'>
+                  By Stars
+                </button>
               </li>
             )}
           </ul>

@@ -58,7 +58,7 @@ export function Testimonials() {
         src='./assets/testimonial-star.svg'
       />
       <div
-        className='swiping-component flex h-[100vh] flex-col justify-evenly bg-[#ffefc5]'
+        className='swiping-component  flex h-[100vh] flex-col justify-evenly bg-[#ffefc5]'
         onTouchStart={(e) => {
           setStartPosition(e.changedTouches[0].clientX);
         }}
@@ -81,7 +81,7 @@ export function Testimonials() {
           {DISPLAYLIST.map((val, index) => (
             <div
               key={index}
-              className={`carousel-item  flex items-center justify-center w-[50vw] aspect-square transition-all duration-1000 cursor-pointer`}
+              className={`carousel-item flex items-center justify-center w-[50vw] aspect-square transition-all duration-1000 cursor-pointer`}
               onClick={() => {
                 if (index === onFocus - 1) {
                   setPosition((prev) => prev + 50);
@@ -110,7 +110,7 @@ export function Testimonials() {
                 <div className='w-3/4 m-auto flex flex-col justify-center pt-[1.5rem]  ml:text-sm '>
                   <p className='text-xs'>{val.message}</p>
                   <p className='mt-4 text-xs pb-2 font-bold'>{val.name}</p>
-                  <p className=' text-[0.55rem] pb-4 text-gray-400'>{val.position}</p>
+                  <p className=' text-[0.65rem] pb-4 text-gray-400'>{val.position}</p>
                 </div>
               </div>
             </div>

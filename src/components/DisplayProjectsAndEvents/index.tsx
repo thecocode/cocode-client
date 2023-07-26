@@ -203,7 +203,7 @@ export default function DisplayProjectsAndEvents({ type, filteredList }: Display
       </div>
 
       <a
-        className='flex items-center text-md px-6 py-4 rounded-full w-fit gap-2 justify-evenly mx-auto outline outline-2 '
+        className='flex items-center text-sm rounded-full w-fit gap-4 justify-center mx-auto outline outline-[1px] px-[clamp(20px,2.9vw,40px)] py-[clamp(12px,1.25vw,24px)]'
         href={`/${type}`}
       >
         <span>View More</span>

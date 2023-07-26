@@ -5,8 +5,8 @@ import { Button } from '../Button';
 export function Hero() {
   const { screenType } = useMediaQuery();
   return (
-    <div className='relative'>
-      <h1 className='w-[90%] flex items-center justify-center mx-auto mt-16'>
+    <div className='relative py-12'>
+      <h1 className='w-[90%] flex items-center justify-center mx-auto mt-8'>
         <div className='absolute -z-10 mx-auto text-transparent'>CODE CONTRIBUTE COLLABORATE</div>
         <svg
           width='639'
@@ -14,7 +14,7 @@ export function Hero() {
           viewBox='0 0 639 336'
           fill='none'
           xmlns='http://www.w3.org/2000/svg'
-          className={`${screenType !== ScreenTypes.MOBILE ? 'w-[50%]' : 'w-[90%]'}`}
+          className='w-[90%] ml:w-[50%]'
         >
           <rect x='1' y='63' width='210' height='63' rx='31.5' fill='#F6EBFF' />
           <path

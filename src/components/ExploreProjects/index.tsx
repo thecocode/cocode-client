@@ -1,7 +1,6 @@
-import { useState } from 'react';
-import DisplayProjectsAndEvents from '../../components/DisplayProjectsAndEvents';
-import { Searchbar } from '../../components/Searchbar';
-import { ListItem } from '../../types';
+import React from 'react';
+import { MarqueeTitle } from '../MarqueeTitle';
+import DisplayProjectsAndEvents from '../DisplayProjectsAndEvents';
 
 const PROJECTS = [
   {
@@ -35,12 +34,12 @@ const PROJECTS = [
     stars: 216,
   },
 ];
-export function Projects() {
-  const [filteredList, setFilteredList] = useState<ListItem[]>(PROJECTS);
+
+export function ExploreProjects() {
   return (
-    <div className='flex flex-col gap-8'>
-      <Searchbar type='projects' setFilteredList={setFilteredList} list={PROJECTS} />
-      <DisplayProjectsAndEvents type='projects' filteredList={filteredList} />
+    <div className='my-12'>
+      <MarqueeTitle content='EXPLORE PROJECTS' />
+      <DisplayProjectsAndEvents type='projects' filteredList={PROJECTS} />
     </div>
   );
 }

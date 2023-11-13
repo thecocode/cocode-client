@@ -52,7 +52,6 @@ function Logo() {
 }
 
 const navlinks = [
-  { label: 'Leaderboard', to: '/leaderboard' },
   { label: 'Projects', to: '/projects' },
   { label: 'Events', to: '/events' },
   { label: 'Contact Us', to: '/contact-us' },

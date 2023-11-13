@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Input, ScreenTypes } from '../../types';
 import { Label } from '../Inputs';
 import { CaretDown, CaretUp } from '@phosphor-icons/react';
@@ -11,10 +11,18 @@ interface Option {
 }
 
 interface IDropdown extends Omit<Input, 'inputAttributes'> {
+  onChange: (option: Option) => void;
   options: Option[];
 }
 
-export function Dropdown({ options, labelTitle, disabled, error, labelAttributes }: IDropdown) {
+export function Dropdown({
+  onChange,
+  options,
+  labelTitle,
+  disabled,
+  error,
+  labelAttributes,
+}: IDropdown) {
   const { screenType } = useMediaQuery();
   const [isOptionsMenuOpen, setIsOptionsMenuOpen] = useState(false);
   const [selectedOption, setSelectedOption] = useState(() =>
@@ -25,6 +33,16 @@ export function Dropdown({ options, labelTitle, disabled, error, labelAttributes
   function toggleMenu() {
     setIsOptionsMenuOpen((prev) => !prev);
   }
+
+  function reset() {
+    setSelectedOption(options.find(({ isDefaultValue }) => isDefaultValue));
+  }
+
+  useEffect(() => {
+    if (selectedOption) {
+      onChange(selectedOption);
+    }
+  }, [selectedOption?.value]);
 
   return (
     <div className='flex flex-col'>

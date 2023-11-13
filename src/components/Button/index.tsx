@@ -7,7 +7,8 @@ enum ButtonVariants {
   PRIMARY = 'primary',
 }
 interface IBaseButton extends ButtonHTMLAttributes<HTMLButtonElement> {
-  LeftIcon?: () => JSX.Element ;
+  loading?: boolean;
+  LeftIcon?: () => JSX.Element;
   RightIcon?: () => JSX.Element;
   title?: string;
   variant?: ButtonVariants;
@@ -16,10 +17,11 @@ interface IBaseButton extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 const buttonStyles = {
-  primary: 'rounded-full border border-solid border-current font-medium',
+  primary: 'rounded-full border border-solid border-current font-medium bg-primary',
 };
 
 export function BaseButton({
+  loading,
   title,
   type,
   LeftIcon,
@@ -27,26 +29,31 @@ export function BaseButton({
   link,
   extendedClassNames,
   variant = ButtonVariants.PRIMARY,
+  ...props
 }: IBaseButton) {
   function getVariantStyles() {
     return buttonStyles[variant];
   }
 
   return (
-    
-   
     <button
       type={type || 'button'}
-      className={`px-[clamp(20px,2.9vw,40px)] py-[clamp(12px,1.25vw,24px)] flex items-center justify-center gap-4 ${getVariantStyles()} ${
+      className={`px-[clamp(18px,2.9vw,40px)] py-[clamp(10px,1.25vw,24px)] flex items-center justify-center gap-4 text-sm relative overflow-hidden ${getVariantStyles()} ${
         extendedClassNames ? extendedClassNames : null
       }`}
+      {...props}
     >
-   
-      {LeftIcon ? <LeftIcon />  : null}
-      {title}
-      {RightIcon ? <RightIcon /> : null}
+      <>
+        {loading ? (
+          <span className='absolute inset-0 flex justify-center items-center bg-inherit'>
+            loading...
+          </span>
+        ) : null}
+        {LeftIcon ? <LeftIcon /> : null}
+        {title}
+        {RightIcon ? <RightIcon /> : null}
+      </>
     </button>
- 
   );
 }
 
@@ -61,6 +68,6 @@ export function Button({ link, type }: IButton) {
         <img className='w-[24px]' src='./assets/discord-logo.svg' alt='' />
         <div>Join Discord</div>
       </span>
-</a>
+    </a>
   );
 }

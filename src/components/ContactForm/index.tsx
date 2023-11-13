@@ -34,7 +34,8 @@ export function ContactForm() {
 
   async function handleSumbit() {
     try {
-      const accessKey = process.env.WEB3FORM_ACCESS_KEY || 'fa502b74-afac-4ee5-9e7b-fe60d40ca888';
+      const accessKey =
+        process.env.REACT_APP_WEB3FORM_ACCESS_KEY || 'fa502b74-afac-4ee5-9e7b-fe60d40ca888';
       if (contactFormRef.current && accessKey) {
         setIsSubmitting(true);
         const formBody = new FormData(contactFormRef.current);

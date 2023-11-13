@@ -2,7 +2,7 @@ import { ExploreEvents, ExploreProjects, Hero, Intro, Testimonials } from '../..
 
 export function Home() {
   return (
-    <div className='overflow-x-hidden'>
+    <div>
       <Hero />
       <div
         className={` absolute w-[70vw] ml:w-[50vw] top-[-25vw] left-[-25vw] aspect-square  -z-10 rounded-full`}

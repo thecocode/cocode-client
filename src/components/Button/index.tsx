@@ -1,8 +1,5 @@
 /* eslint-disable react/button-has-type */
-import { DiscordLogo } from '@phosphor-icons/react';
-import { ButtonTypes, Button as IButton } from '../../types';
 import { ButtonHTMLAttributes } from 'react';
-import { Link } from 'react-router-dom';
 enum ButtonVariants {
   PRIMARY = 'primary',
 }
@@ -26,7 +23,6 @@ export function BaseButton({
   type,
   LeftIcon,
   RightIcon,
-  link,
   extendedClassNames,
   variant = ButtonVariants.PRIMARY,
   ...props
@@ -57,17 +53,16 @@ export function BaseButton({
   );
 }
 
-export function Button({ link, type }: IButton) {
+export function DiscordButton() {
   return (
-    <a href={link} className=''>
-      <span
-        className={`flex w-[220px] ml:w-[240px] mx-auto items-center h-[2.5rem] ml:h-[3rem] font-semibold justify-center text-[1.2rem] ml:text-[1.5rem] gap-4 outline outline-2 rounded-[1.5rem] py-3 px-6 ${
-          type === ButtonTypes.DISCORD ? 'bg-discord-blue text-white' : 'bg-white text-black'
-        } `}
-      >
-        <img className='w-[24px]' src='./assets/discord-logo.svg' alt='' />
-        <div>Join Discord</div>
-      </span>
+    <a
+      className='flex items-center font-semibold justify-center w-fit text-sm gap-4 rounded-full mx-auto py-[12px] px-[28px] transition-all shadow-[0_8px_0px_#B0B3EA] ml:mt-[8px] ml:shadow-none ml:hover:-translate-y-[8px] ml:hover:shadow-[0_8px_0px_#B0B3EA] bg-discord-blue text-white ml:py-[18px] ml:px-[32px]'
+      href='https://discord.com/invite/WfZjwtPRYE'
+      target='_blank'
+      rel='noreferrer'
+    >
+      <img className='max-w-[22px] tb:max-w-[28px]' src='./assets/discord-logo.svg' alt='' />
+      <span>Join Discord</span>
     </a>
   );
 }

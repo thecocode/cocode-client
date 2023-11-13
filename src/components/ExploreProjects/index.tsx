@@ -39,7 +39,7 @@ export function ExploreProjects() {
   return (
     <div className='my-12'>
       <MarqueeTitle content='EXPLORE PROJECTS' />
-      <DisplayProjectsAndEvents type='projects' filteredList={PROJECTS} />
+      <DisplayProjectsAndEvents type='projects' atMainPage={false} filteredList={PROJECTS} />
     </div>
   );
 }

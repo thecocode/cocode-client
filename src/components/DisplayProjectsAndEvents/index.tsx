@@ -14,6 +14,7 @@ interface Project {
 interface DisplayProps {
   type: 'projects' | 'events';
   filteredList: Event[] | Project[];
+  atMainPage: boolean;
 }
 
 type EVENTS = Event[];
@@ -80,7 +81,7 @@ const PROJECTS = [
 ];
 
 type DisplayList = EVENTS | PROJECTS;
-export default function DisplayProjectsAndEvents({ type, filteredList }: DisplayProps) {
+export default function DisplayProjectsAndEvents({ type, filteredList, atMainPage }: DisplayProps) {
   const [displayList, setDisplayList] = useState<DisplayList>(() => {
     if (type === 'projects') {
       return PROJECTS;
@@ -202,13 +203,15 @@ export default function DisplayProjectsAndEvents({ type, filteredList }: Display
         )}
       </div>
 
-      <a
-        className='flex items-center text-sm rounded-full w-fit gap-4 justify-center mx-auto outline outline-[1px] px-[clamp(20px,2.9vw,40px)] py-[clamp(12px,1.25vw,24px)]'
-        href={`/${type}`}
-      >
-        <span>View More</span>
-        <img src='./assets/arrow.svg' />
-      </a>
+      {!atMainPage && (
+        <a
+          className='flex items-center text-sm rounded-full w-fit gap-4 justify-center mx-auto outline outline-[1px] px-[clamp(20px,2.9vw,40px)] py-[clamp(12px,1.25vw,24px)]'
+          href={`/${type}`}
+        >
+          <span>View More</span>
+          <img src='./assets/arrow.svg' />
+        </a>
+      )}
     </div>
   );
 }

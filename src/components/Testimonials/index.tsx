@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import { useMediaQuery } from '../../hooks';
+import { ScreenTypes } from '../../types';
 
 export function Testimonials() {
   const [position, setPosition] = useState(25);
@@ -51,6 +53,7 @@ export function Testimonials() {
   ];
 
   const [startPosition, setStartPosition] = useState(0);
+  const { screenType } = useMediaQuery();
   return (
     <div className='relative'>
       <img
@@ -60,16 +63,20 @@ export function Testimonials() {
       <div
         className='swiping-component  flex h-[100vh] flex-col justify-evenly bg-[#ffefc5]'
         onTouchStart={(e) => {
-          setStartPosition(e.changedTouches[0].clientX);
+          if (screenType === ScreenTypes.MOBILE || screenType === ScreenTypes.TABLET) {
+            setStartPosition(e.changedTouches[0].clientX);
+          }
         }}
         onTouchEnd={(e) => {
-          if (e.changedTouches[0].clientX < startPosition && onFocus !== DISPLAY_LIST.length - 1) {
-            setPosition((prev) => prev - 50);
-            setOnFocus((prev) => prev + 1);
-          } else {
-            if (onFocus !== 0) {
-              setPosition((prev) => prev + 50);
-              setOnFocus((prev) => prev - 1);
+          if (screenType === ScreenTypes.MOBILE || screenType === ScreenTypes.TABLET) {
+            if (e.changedTouches[0].clientX < startPosition && onFocus <= DISPLAY_LIST.length) {
+              setPosition((prev) => prev - 50);
+              setOnFocus((prev) => prev + 1);
+            } else {
+              if (onFocus !== 0) {
+                setPosition((prev) => prev + 50);
+                setOnFocus((prev) => prev - 1);
+              }
             }
           }
         }}
@@ -83,14 +90,19 @@ export function Testimonials() {
               key={index}
               className={`carousel-item flex items-center justify-center w-[50vw] aspect-square transition-all duration-1000 cursor-pointer`}
               onClick={() => {
-                if (index === onFocus - 1) {
-                  setPosition((prev) => prev + 50);
-                  setOnFocus((prev) => prev - 1);
-                }
+                if (
+                  screenType === ScreenTypes.LARGE_LAPTOP ||
+                  screenType === ScreenTypes.MID_LAPTOP
+                ) {
+                  if (index === onFocus - 1) {
+                    setPosition((prev) => prev + 50);
+                    setOnFocus((prev) => prev - 1);
+                  }
 
-                if (index === onFocus + 1) {
-                  setPosition((prev) => prev - 50);
-                  setOnFocus((prev) => prev + 1);
+                  if (index === onFocus + 1) {
+                    setPosition((prev) => prev - 50);
+                    setOnFocus((prev) => prev + 1);
+                  }
                 }
               }}
             >

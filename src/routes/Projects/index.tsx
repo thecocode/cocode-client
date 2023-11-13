@@ -40,7 +40,7 @@ export function Projects() {
   return (
     <div className='flex flex-col gap-8'>
       <Searchbar type='projects' setFilteredList={setFilteredList} list={PROJECTS} />
-      <DisplayProjectsAndEvents type='projects' filteredList={filteredList} />
+      <DisplayProjectsAndEvents type='projects' atMainPage={true} filteredList={filteredList} />
     </div>
   );
 }

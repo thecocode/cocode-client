@@ -109,20 +109,20 @@ export function Testimonials() {
               <div
                 className={`content 
 
-                ${index === onFocus - 1 && 'translate-x-[-25%]'} 
-                ${index === onFocus + 1 && 'translate-x-[25%]'}
+                ${index === onFocus - 1 && 'translate-x-[-37.5%]'} 
+                ${index === onFocus + 1 && 'translate-x-[37.5%]'}
                 ${onFocus === index ? 'onfocus scale-[1.5]' : 'cursor-pointer'}
-                w-[75%] tb:w-[50%] bg-white py-[4rem] shadow-md relative text-center pt-[2rem] pb-[1rem] transition-all duration-1000 aspect-[4/3] flex justify-center rounded-md
+                min-w-[75%] tb:w-[50%]  bg-white py-[4rem] shadow-md relative text-center pt-[2rem] pb-[1rem] transition-all duration-1000 aspect-[4/3] flex justify-center rounded-md
                 `}
               >
                 <img
                   className='review-image w-[40%] left-[30%] top-[-30px] p-0 transition-all duration-1000 tb:left-[35px] tb:w-[80px] tb:top-[-40px] absolute rounded-full outline outline-[5px] outline-white bg-white'
                   src='./assets/testimonialimg.svg'
                 />
-                <div className='w-3/4 m-auto flex flex-col justify-center pt-[1.5rem]  ml:text-sm '>
-                  <p className='text-xs'>{val.message}</p>
-                  <p className='mt-4 text-xs pb-2 font-bold'>{val.name}</p>
-                  <p className=' text-[0.65rem] pb-4 text-gray-400'>{val.position}</p>
+                <div className='w-3/4 m-auto flex flex-col justify-center pt-[1.5rem] text-sm '>
+                  <p className=''>{val.message}</p>
+                  <p className='mt-4 pb-2 font-bold'>{val.name}</p>
+                  <p className=' pb-4 text-gray-400'>{val.position}</p>
                 </div>
               </div>
             </div>

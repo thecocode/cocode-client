@@ -80,6 +80,8 @@ const PROJECTS = [
   },
 ];
 
+const displaySize : string[] = ['ml:col-start-1 ml:col-end-2 ml:row-start-2 ml:row-end-3 col-start-1 col-end-2 row-start-1 row-end-[7]' , 'ml:col-span-2 ml:row-start-1 ml:row-end-3 col-start-2 col-end-[-1] row-start-1 row-end-6' , 'ml:col-start-4 ml:col-end-[-1] ml:row-start-1 ml:row-end-2 col-start-1 col-end-2 row-start-7 row-end-[13]' ,'ml:row-start-3 ml:row-end-[-1] ml:col-start-1 ml:col-end-2 col-start-2 col-end-[-1] row-start-6 row-end-[14]' , 'ml:col-start-2 ml:col-end-4 ml:row-start-3 ml:row-end-[-1] col-start-1 col-end-2 row-start-[13] row-end-[-1]' , 'ml:row-start-2 ml:row-end-[-1] ml:col-start-4 col-start-2 col-end-[-1] row-start-[14] row-end-[-1]' ]
+
 type DisplayList = EVENTS | PROJECTS;
 export default function DisplayProjectsAndEvents({ type, filteredList, atMainPage }: DisplayProps) {
   const [displayList, setDisplayList] = useState<DisplayList>(() => {
@@ -93,114 +95,26 @@ export default function DisplayProjectsAndEvents({ type, filteredList, atMainPag
   return (
     <div className='font-poppins text-sm mt-12 mb-32'>
       <div className='main-grid w-[80vw] h-[90vh] my-10 mx-auto grid ml:grid-cols-4 ml:grid-rows-3 grid-cols-2 grid-rows-[repeat(20_,_minmax(0,_1fr))] justify-items-center gap-4'>
-        {filteredList.length > 0 && (
-          <div className='one flex flex-col justify-center w-full h-full ml:col-start-1 ml:col-end-2 ml:row-start-2 ml:row-end-3 col-start-1 col-end-2 row-start-1 row-end-7'>
+        {
+          filteredList.map((item , index) => (
+            <div className={`one flex flex-col justify-center w-full h-full ${displaySize[index%displaySize.length]}`} key = {item.img}>
             <div
               className='image w-full h-[90%] bg-cover bg-center rounded-lg'
-              style={{ backgroundImage: filteredList[0].img }}
+              style={{ backgroundImage: item.img }}
             ></div>
             <div className='name h-fit'>
-              {filteredList[0].name}
+              {item.name}
               {type === 'projects' && (
                 <span className='display-stars flex gap-1'>
                   <img className='w-[1rem]' src='./assets/github.svg' alt='' />
                   <img className='w-[1rem]' src='./assets/star.svg' alt='' />
-                  {(filteredList[0] as Project).stars}
+                  {(item as Project).stars}
                 </span>
               )}
             </div>
           </div>
-        )}
-        {filteredList.length > 1 && (
-          <div className='two flex flex-col justify-center w-full h-full ml:col-span-2 ml:row-start-1 ml:row-end-3 col-start-2 col-end-[-1] row-start-1 row-end-6'>
-            <div
-              className='image w-full h-[90%] bg-cover bg-center rounded-lg'
-              style={{ backgroundImage: filteredList[1].img }}
-            ></div>
-            <div className='name h-fit'>
-              {filteredList[1].name}
-              {type === 'projects' && (
-                <span className='display-stars flex gap-1'>
-                  <img className='w-[1rem]' src='./assets/github.svg' alt='' />
-                  <img className='w-[1rem]' src='./assets/star.svg' alt='' />
-                  {(filteredList[1] as Project).stars}
-                </span>
-              )}
-            </div>
-          </div>
-        )}
-        {filteredList.length > 2 && (
-          <div className='three flex flex-col justify-center w-full h-full ml:col-start-4 ml:col-end-[-1] ml:row-start-1 ml:row-end-2 col-start-1 col-end-2 row-start-7 row-end-[13]'>
-            <div
-              className='image w-full h-[90%] bg-cover bg-center rounded-lg'
-              style={{ backgroundImage: filteredList[2].img }}
-            ></div>
-            <div className='name h-fit'>
-              {filteredList[2].name}
-              {type === 'projects' && (
-                <span className='display-stars flex gap-1'>
-                  <img className='w-[1rem]' src='./assets/github.svg' alt='' />
-                  <img className='w-[1rem]' src='./assets/star.svg' alt='' />
-                  {(filteredList[2] as Project).stars}
-                </span>
-              )}
-            </div>
-          </div>
-        )}
-        {filteredList.length > 3 && (
-          <div className='four flex flex-col justify-center w-full h-full ml:row-start-3 ml:row-end-[-1] ml:col-start-1 ml:col-end-2 col-start-2 col-end-[-1] row-start-6 row-end-[14]'>
-            <div
-              className='image w-full h-[90%] bg-cover bg-center rounded-lg'
-              style={{ backgroundImage: filteredList[3].img }}
-            ></div>
-            <div className='name h-fit'>
-              {filteredList[3].name}
-              {type === 'projects' && (
-                <span className='display-stars flex gap-1'>
-                  <img className='w-[1rem]' src='./assets/github.svg' alt='' />
-                  <img className='w-[1rem]' src='./assets/star.svg' alt='' />
-                  {(filteredList[3] as Project).stars}
-                </span>
-              )}
-            </div>
-          </div>
-        )}
-        {filteredList.length > 4 && (
-          <div className='five flex flex-col justify-center w-full h-full ml:col-start-2 ml:col-end-4 ml:row-start-3 ml:row-end-[-1] col-start-1 col-end-2 row-start-[13] row-end-[-1]'>
-            <div
-              className='image w-full h-[90%] bg-cover bg-center rounded-lg'
-              style={{ backgroundImage: filteredList[4].img }}
-            ></div>
-            <div className='name h-fit'>
-              {filteredList[4].name}
-              {type === 'projects' && (
-                <span className='display-stars flex gap-1'>
-                  <img className='w-[1rem]' src='./assets/github.svg' alt='' />
-                  <img className='w-[1rem]' src='./assets/star.svg' alt='' />
-                  {(filteredList[4] as Project).stars}
-                </span>
-              )}
-            </div>
-          </div>
-        )}
-        {filteredList.length > 5 && (
-          <div className='six flex flex-col justify-center w-full h-full ml:row-start-2 ml:row-end-[-1] ml:col-start-4 col-start-2 col-end-[-1] row-start-[14] row-end-[-1]'>
-            <div
-              className='image w-full h-[90%] bg-cover bg-center rounded-lg'
-              style={{ backgroundImage: filteredList[5].img }}
-            ></div>
-            <div className='name h-fit'>
-              {filteredList[5].name}
-              {type === 'projects' && (
-                <span className='display-stars flex gap-1'>
-                  <img className='w-[1rem]' src='./assets/github.svg' alt='' />
-                  <img className='w-[1rem]' src='./assets/star.svg' alt='' />
-                  {(filteredList[5] as Project).stars}
-                </span>
-              )}
-            </div>
-          </div>
-        )}
+          ))
+        }
       </div>
 
       {!atMainPage && (

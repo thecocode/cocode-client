@@ -1,13 +1,11 @@
 import { useMediaQuery } from '../../hooks';
-import { ButtonTypes, ScreenTypes } from '../../types';
-import { Button } from '../Button';
+import { DiscordButton } from '../Button';
 
 export function Hero() {
-  const { screenType } = useMediaQuery();
   return (
     <div className='relative py-12'>
-      <h1 className='w-[90%] flex items-center justify-center mx-auto mt-8'>
-        <div className='absolute -z-10 mx-auto text-transparent'>CODE CONTRIBUTE COLLABORATE</div>
+      <h1 className='w-[90%] flex items-center justify-center mx-auto mb-[-50px] tb:mb-[-30px] ml:mb-0'>
+        {/* <div className='absolute -z-10 mx-auto text-transparent'>CODE CONTRIBUTE COLLABORATE</div> */}
         <svg
           width='639'
           height='336'
@@ -43,11 +41,11 @@ export function Hero() {
           />
         </svg>
       </h1>
-      <p className='font-lato w-[80%] ml:w-[40%] text-[1.1rem] text-center my-8 mx-auto'>
+      <p className='font-lato w-[80%] ml:w-[40%] text-md text-center my-8 mx-auto'>
         Join a community of tech enthusiasts who share your passion for coding and find ways to make
         meaningful contributions
       </p>
-      <Button type={ButtonTypes.DISCORD} link='' />
+      <DiscordButton />
     </div>
   );
 }
